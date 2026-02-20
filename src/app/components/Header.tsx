@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail } from 'lucide-react';
-import logo from 'figma:asset/c8fae6d8b72b096580232544c5f16dc08c1c047a.png';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +31,12 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Naplog Logistics" className="h-12 w-12 md:h-16 md:w-16" />
+            {/* ✅ FIXED LOGO */}
+            <img
+              src="/images/logo.png"
+              alt="Naplog Logistics"
+              className="h-12 w-12 md:h-16 md:w-16 object-contain"
+            />
             <div>
               <h1 className="text-[#1e40af] font-bold text-xl md:text-2xl">NAPLOG</h1>
               <p className="text-xs text-gray-600">Logistics Pvt. Ltd.</p>
@@ -91,45 +95,32 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
-            <Link 
-              to="/" 
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-left transition-colors ${isActive('/') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}
-            >
+            <Link to="/" onClick={() => setIsMenuOpen(false)}
+              className={`text-left transition-colors ${isActive('/') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}>
               Home
             </Link>
-            <Link 
-              to="/about" 
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-left transition-colors ${isActive('/about') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}
-            >
+            <Link to="/about" onClick={() => setIsMenuOpen(false)}
+              className={`text-left transition-colors ${isActive('/about') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}>
               About
             </Link>
-            <Link 
-              to="/services" 
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-left transition-colors ${isActive('/services') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}
-            >
+            <Link to="/services" onClick={() => setIsMenuOpen(false)}
+              className={`text-left transition-colors ${isActive('/services') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}>
               Services
             </Link>
-            <Link 
-              to="/why-choose-us" 
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-left transition-colors ${isActive('/why-choose-us') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}
-            >
+            <Link to="/why-choose-us" onClick={() => setIsMenuOpen(false)}
+              className={`text-left transition-colors ${isActive('/why-choose-us') ? 'text-[#1e40af] font-semibold' : 'text-gray-700 hover:text-[#1e40af]'}`}>
               Why Choose Us
             </Link>
-            <a href="https://b2b.naploglogistics.com/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#1e40af] transition-colors text-left">
+            <a href="https://b2b.naploglogistics.com/" target="_blank" rel="noopener noreferrer"
+              className="text-gray-700 hover:text-[#1e40af] transition-colors text-left">
               Tracking
             </a>
-            <a href="https://b2b.naploglogistics.com/login" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#1e40af] transition-colors text-left">
+            <a href="https://b2b.naploglogistics.com/login" target="_blank" rel="noopener noreferrer"
+              className="text-gray-700 hover:text-[#1e40af] transition-colors text-left">
               Login
             </a>
-            <Link 
-              to="/contact" 
-              onClick={() => setIsMenuOpen(false)}
-              className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition-colors"
-            >
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}
+              className="bg-orange-500 text-white px-6 py-2 rounded-md hover:bg-orange-600 transition-colors">
               Contact Us
             </Link>
           </nav>
