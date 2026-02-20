@@ -1,24 +1,31 @@
 import { Facebook, Twitter, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from 'figma:asset/c8fae6d8b72b096580232544c5f16dc08c1c047a.png';
 
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Naplog Logistics" className="h-12 w-12" />
+              {/* ✅ FIXED LOGO */}
+              <img
+                src="/images/logo.png"
+                alt="Naplog Logistics"
+                className="h-12 w-12 object-contain"
+              />
               <div>
                 <h3 className="text-white text-xl font-bold">NAPLOG</h3>
                 <p className="text-xs text-gray-400">Logistics Pvt. Ltd.</p>
               </div>
             </div>
+
             <p className="text-gray-400 mb-4">
               Your trusted partner in complete logistics solutions. Efficient, reliable & affordable.
             </p>
+
             <div className="flex gap-3">
               <a href="#" className="bg-gray-800 p-2 rounded-md hover:bg-orange-500 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -39,38 +46,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <Link 
-                  to="/"
-                  className="hover:text-orange-500 transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/about"
-                  className="hover:text-orange-500 transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/services"
-                  className="hover:text-orange-500 transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/contact"
-                  className="hover:text-orange-500 transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
+              <li><Link to="/" className="hover:text-orange-500 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-orange-500 transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-orange-500 transition-colors">Services</Link></li>
+              <li><Link to="/contact" className="hover:text-orange-500 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -113,6 +92,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
