@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-4">
               {/* ✅ FIXED LOGO */}
               <img
-                src="assets/c8fae6d8b72b096580232544c5f16dc08c1c047a.png"
+                src="https://naploglogistics.com/storage/app/public/YvtUcqKeFhDhscByH5yTUe14Z76Hs6VyhOxPoHz2.png"
                 alt="Naplog Logistics"
                 className="h-12 w-12 object-contain"
               />
