@@ -33,7 +33,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3">
             {/* ✅ FIXED LOGO */}
             <img
-              src="/images/logo.png"
+              src="assets/c8fae6d8b72b096580232544c5f16dc08c1c047a.png"
               alt="Naplog Logistics"
               className="h-12 w-12 md:h-16 md:w-16 object-contain"
             />
